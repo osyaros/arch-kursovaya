@@ -11,8 +11,6 @@
 
 **Стек:** Go 1.23, Gin, PostgreSQL 16, KeyDB 6.3, RabbitMQ 3, Prometheus 2.44, Grafana, Alertmanager 0.24, Docker Compose.
 
-Текст курсовой: [`kursovaya.md`](kursovaya.md) · DOCX: `kursovaya.docx` (генерация: `python3 scripts/generate_kursovaya_docx.py`).
-
 ---
 
 ## Архитектура
