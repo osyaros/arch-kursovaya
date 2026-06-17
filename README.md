@@ -40,7 +40,7 @@
 ## Структура проекта
 
 ```
-arch-oyu-lab4/
+arch-kursovaya/
 ├── cmd/
 │   ├── server/              # user-service (REST API)
 │   ├── notification/        # notification-service (consumer)
@@ -368,4 +368,4 @@ docker logs telegram-bot --tail 50
 
 ## Автор
 
-**Осокин Ярослав Юрьевич** · группа BIVT-23-SP-2, № 17
+**Осокин Ярослав Юрьевич** · группа БИВТ-23-СП-2, 
