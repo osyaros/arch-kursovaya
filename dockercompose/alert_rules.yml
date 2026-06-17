@@ -1,0 +1,33 @@
+groups:
+  - name: cpu-alerts
+    rules:
+      - alert: HighSystemCPUUsage
+        expr: rate(process_cpu_seconds_total{job="user-service"}[2m]) > 0.90
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High system CPU usage detected"
+          description: "CPU usage on user-service exceeds 90% for the last 2 minutes."
+
+  - name: user-creation-alerts
+    rules:
+      - alert: HighUserCreationRate
+        expr: increase(users_new_total[5m]) > 10
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High user creation increase detected"
+          description: "More than 10 users were created in the last 5 minutes."
+
+  - name: api-user-request-alerts
+    rules:
+      - alert: HighGETRequestDuration
+        expr: rate(api_user_request_duration_seconds_sum{method="get"}[5m]) / rate(api_user_request_duration_seconds_count{method="get"}[5m]) > 2
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High duration for GET request on API"
+          description: "Average GET request duration exceeds 2 seconds for the last minute."
